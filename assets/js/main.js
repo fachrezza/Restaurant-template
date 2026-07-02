@@ -222,6 +222,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  /* ==========================================
+   Gallery Filter
+========================================== */
+
+const galleryButtons = document.querySelectorAll(".gallery-filter");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+if (galleryButtons.length > 0) {
+
+    galleryButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            galleryButtons.forEach(btn => {
+
+                btn.classList.remove("bg-primary", "text-white");
+
+                btn.classList.add("border");
+
+            });
+
+            button.classList.add("bg-primary", "text-white");
+
+            button.classList.remove("border");
+
+            const category = button.dataset.filter;
+
+            galleryItems.forEach(item => {
+
+                if (category === "all") {
+
+                    item.style.display = "block";
+
+                } else {
+
+                    item.style.display =
+                        item.dataset.category === category
+                            ? "block"
+                            : "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+}
+
   /* =====================================================
        Console
     ====================================================== */
