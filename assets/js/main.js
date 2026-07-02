@@ -221,6 +221,79 @@ document.addEventListener("DOMContentLoaded", () => {
         img.setAttribute("draggable", "false");
 
     });
+    /* ==========================================
+   Menu Filter
+========================================== */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const menuItems = document.querySelectorAll(".menu-item");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("bg-primary", "text-white");
+
+            btn.classList.add("border");
+
+        });
+
+        button.classList.add("bg-primary", "text-white");
+
+        button.classList.remove("border");
+
+        const category = button.dataset.filter;
+
+        menuItems.forEach(item => {
+
+            if (category === "all") {
+
+                item.style.display = "block";
+
+                return;
+
+            }
+
+            item.style.display =
+                item.dataset.category === category
+                    ? "block"
+                    : "none";
+
+        });
+
+    });
+
+});
+
+/* ==========================================
+   Menu Search
+========================================== */
+
+const searchInput = document.getElementById("searchMenu");
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", () => {
+
+        const keyword = searchInput.value.toLowerCase();
+
+        menuItems.forEach(item => {
+
+            const title = item.querySelector("h3").innerText.toLowerCase();
+
+            item.style.display =
+                title.includes(keyword)
+                    ? "block"
+                    : "none";
+
+        });
+
+    });
+
+}
 
     /* =====================================================
        Console
