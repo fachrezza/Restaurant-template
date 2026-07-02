@@ -4,301 +4,227 @@
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
+  /* =====================================================
        Element
     ====================================================== */
 
-    const navbar = document.getElementById("navbar");
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const topButton = document.getElementById("topButton");
+  const navbar = document.getElementById("navbar");
+  const menuButton = document.getElementById("menuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const topButton = document.getElementById("topButton");
 
-    /* =====================================================
+  /* =====================================================
        Navbar Scroll
     ====================================================== */
 
-    function navbarScroll() {
-
-        if (window.scrollY > 50) {
-
-            navbar.classList.add("navbar-scrolled");
-
-        } else {
-
-            navbar.classList.remove("navbar-scrolled");
-
-        }
-
+  function navbarScroll() {
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar-scrolled");
+    } else {
+      navbar.classList.remove("navbar-scrolled");
     }
+  }
 
-    window.addEventListener("scroll", navbarScroll);
+  window.addEventListener("scroll", navbarScroll);
 
-    navbarScroll();
+  navbarScroll();
 
-    /* =====================================================
+  /* =====================================================
        Mobile Menu
     ====================================================== */
 
-    if (menuButton) {
+  if (menuButton) {
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
 
-        menuButton.addEventListener("click", () => {
-
-            mobileMenu.classList.toggle("hidden");
-
-        });
-
-    }
-
-    /* =====================================================
+  /* =====================================================
        Close Mobile Menu
     ====================================================== */
 
-    const mobileLinks = mobileMenu.querySelectorAll("a");
+  const mobileLinks = mobileMenu.querySelectorAll("a");
 
-    mobileLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mobileMenu.classList.add("hidden");
-
-        });
-
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
     });
+  });
 
-    /* =====================================================
+  /* =====================================================
        Back To Top
     ====================================================== */
 
-    function toggleTopButton() {
-
-        if (window.scrollY > 400) {
-
-            topButton.classList.remove("hidden");
-
-        } else {
-
-            topButton.classList.add("hidden");
-
-        }
-
+  function toggleTopButton() {
+    if (window.scrollY > 400) {
+      topButton.classList.remove("hidden");
+    } else {
+      topButton.classList.add("hidden");
     }
+  }
 
-    window.addEventListener("scroll", toggleTopButton);
+  window.addEventListener("scroll", toggleTopButton);
 
-    toggleTopButton();
+  toggleTopButton();
 
-    topButton.addEventListener("click", () => {
+  topButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
 
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
+      behavior: "smooth",
     });
+  });
 
-    /* =====================================================
+  /* =====================================================
        Fade Up Animation
     ====================================================== */
 
-    const fadeItems = document.querySelectorAll(".fade-up");
+  const fadeItems = document.querySelectorAll(".fade-up");
 
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("show");
-
-                }
-
-            });
-
-        }, {
-
-            threshold: 0.2
-
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
         });
+      },
+      {
+        threshold: 0.2,
+      },
+    );
 
-        fadeItems.forEach(item => observer.observe(item));
+    fadeItems.forEach((item) => observer.observe(item));
+  }
 
-    }
-
-    /* =====================================================
+  /* =====================================================
        Counter Animation
     ====================================================== */
 
-    const counters = document.querySelectorAll("[data-counter]");
+  const counters = document.querySelectorAll("[data-counter]");
 
-    counters.forEach(counter => {
+  counters.forEach((counter) => {
+    const target = Number(counter.dataset.counter);
 
-        const target = Number(counter.dataset.counter);
+    let current = 0;
 
-        let current = 0;
+    const speed = Math.max(10, Math.floor(target / 80));
 
-        const speed = Math.max(10, Math.floor(target / 80));
+    function updateCounter() {
+      current += speed;
 
-        function updateCounter() {
+      if (current >= target) {
+        current = target;
+      }
 
-            current += speed;
+      counter.innerText = current;
 
-            if (current >= target) {
+      if (current < target) {
+        requestAnimationFrame(updateCounter);
+      }
+    }
 
-                current = target;
+    updateCounter();
+  });
 
-            }
-
-            counter.innerText = current;
-
-            if (current < target) {
-
-                requestAnimationFrame(updateCounter);
-
-            }
-
-        }
-
-        updateCounter();
-
-    });
-
-    /* =====================================================
+  /* =====================================================
        Active Navbar
     ====================================================== */
 
-    const currentPage = location.pathname.split("/").pop();
+  const currentPage = location.pathname.split("/").pop();
 
-    document.querySelectorAll("nav a").forEach(link => {
+  document.querySelectorAll("nav a").forEach((link) => {
+    const href = link.getAttribute("href");
 
-        const href = link.getAttribute("href");
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+      link.classList.add("text-secondary", "font-bold");
+    }
+  });
 
-        if (href === currentPage || (currentPage === "" && href === "index.html")) {
-
-            link.classList.add("text-secondary", "font-bold");
-
-        }
-
-    });
-
-    /* =====================================================
+  /* =====================================================
        Smooth Anchor Scroll
     ====================================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
 
-        anchor.addEventListener("click", function (e) {
+      if (!target) return;
 
-            const target = document.querySelector(this.getAttribute("href"));
+      e.preventDefault();
 
-            if (!target) return;
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-        });
-
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
     });
+  });
 
-    /* =====================================================
+  /* =====================================================
        Image Hover Effect
     ====================================================== */
 
-    const images = document.querySelectorAll("img");
+  const images = document.querySelectorAll("img");
 
-    images.forEach(img => {
-
-        img.setAttribute("draggable", "false");
-
-    });
-    /* ==========================================
+  images.forEach((img) => {
+    img.setAttribute("draggable", "false");
+  });
+  /* ==========================================
    Menu Filter
 ========================================== */
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
-const menuItems = document.querySelectorAll(".menu-item");
+  const menuItems = document.querySelectorAll(".menu-item");
 
-filterButtons.forEach(button => {
-
+  filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("bg-primary", "text-white");
 
-        filterButtons.forEach(btn => {
+        btn.classList.add("border");
+      });
 
-            btn.classList.remove("bg-primary", "text-white");
+      button.classList.add("bg-primary", "text-white");
 
-            btn.classList.add("border");
+      button.classList.remove("border");
 
-        });
+      const category = button.dataset.filter;
 
-        button.classList.add("bg-primary", "text-white");
+      menuItems.forEach((item) => {
+        if (category === "all") {
+          item.style.display = "block";
 
-        button.classList.remove("border");
+          return;
+        }
 
-        const category = button.dataset.filter;
-
-        menuItems.forEach(item => {
-
-            if (category === "all") {
-
-                item.style.display = "block";
-
-                return;
-
-            }
-
-            item.style.display =
-                item.dataset.category === category
-                    ? "block"
-                    : "none";
-
-        });
-
+        item.style.display =
+          item.dataset.category === category ? "block" : "none";
+      });
     });
+  });
 
-});
-
-/* ==========================================
+  /* ==========================================
    Menu Search
 ========================================== */
 
-const searchInput = document.getElementById("searchMenu");
+  const searchInput = document.getElementById("searchMenu");
 
-if (searchInput) {
-
+  if (searchInput) {
     searchInput.addEventListener("keyup", () => {
+      const keyword = searchInput.value.toLowerCase();
 
-        const keyword = searchInput.value.toLowerCase();
+      menuItems.forEach((item) => {
+        const title = item.querySelector("h3").innerText.toLowerCase();
 
-        menuItems.forEach(item => {
-
-            const title = item.querySelector("h3").innerText.toLowerCase();
-
-            item.style.display =
-                title.includes(keyword)
-                    ? "block"
-                    : "none";
-
-        });
-
+        item.style.display = title.includes(keyword) ? "block" : "none";
+      });
     });
+  }
 
-}
-
-    /* =====================================================
+  /* =====================================================
        Console
     ====================================================== */
 
-    console.log("Garden Cafe Template Loaded");
-
+  console.log("Garden Cafe Template Loaded");
 });
