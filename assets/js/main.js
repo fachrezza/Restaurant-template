@@ -222,106 +222,115 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   /* ==========================================
    Gallery Filter
 ========================================== */
 
-const galleryButtons = document.querySelectorAll(".gallery-filter");
-const galleryItems = document.querySelectorAll(".gallery-item");
+  const galleryButtons = document.querySelectorAll(".gallery-filter");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
-if (galleryButtons.length > 0) {
+  if (galleryButtons.length > 0) {
+    galleryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        galleryButtons.forEach((btn) => {
+          btn.classList.remove("bg-primary", "text-white");
 
-    galleryButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            galleryButtons.forEach(btn => {
-
-                btn.classList.remove("bg-primary", "text-white");
-
-                btn.classList.add("border");
-
-            });
-
-            button.classList.add("bg-primary", "text-white");
-
-            button.classList.remove("border");
-
-            const category = button.dataset.filter;
-
-            galleryItems.forEach(item => {
-
-                if (category === "all") {
-
-                    item.style.display = "block";
-
-                } else {
-
-                    item.style.display =
-                        item.dataset.category === category
-                            ? "block"
-                            : "none";
-
-                }
-
-            });
-
+          btn.classList.add("border");
         });
 
+        button.classList.add("bg-primary", "text-white");
+
+        button.classList.remove("border");
+
+        const category = button.dataset.filter;
+
+        galleryItems.forEach((item) => {
+          if (category === "all") {
+            item.style.display = "block";
+          } else {
+            item.style.display =
+              item.dataset.category === category ? "block" : "none";
+          }
+        });
+      });
     });
+  }
 
-}
-
-/* ==========================================
+  /* ==========================================
    Reservation Form Validation
 ========================================== */
 
-const reservationForm = document.getElementById("reservationForm");
+  const reservationForm = document.getElementById("reservationForm");
 
-if (reservationForm) {
-
+  if (reservationForm) {
     reservationForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-        e.preventDefault();
+      const requiredFields = reservationForm.querySelectorAll(
+        "input[required], select, textarea",
+      );
 
-        const requiredFields = reservationForm.querySelectorAll(
-            "input[required], select, textarea"
-        );
+      let valid = true;
 
-        let valid = true;
+      requiredFields.forEach((field) => {
+        if (field.value.trim() === "") {
+          field.classList.add("border-red-500");
 
-        requiredFields.forEach(field => {
-
-            if (field.value.trim() === "") {
-
-                field.classList.add("border-red-500");
-
-                valid = false;
-
-            } else {
-
-                field.classList.remove("border-red-500");
-
-            }
-
-        });
-
-        if (!valid) {
-
-            alert("Please complete all required fields.");
-
-            return;
-
+          valid = false;
+        } else {
+          field.classList.remove("border-red-500");
         }
+      });
 
-        alert("🎉 Thank you!\n\nYour reservation request has been submitted.");
+      if (!valid) {
+        alert("Please complete all required fields.");
 
-        reservationForm.reset();
+        return;
+      }
 
+      alert("🎉 Thank you!\n\nYour reservation request has been submitted.");
+
+      reservationForm.reset();
     });
+  }
 
-}
+  /* ==========================================
+   Contact Form Validation
+========================================== */
+
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fields = contactForm.querySelectorAll(
+        "input[required], textarea[required]",
+      );
+
+      let valid = true;
+
+      fields.forEach((field) => {
+        if (field.value.trim() === "") {
+          field.classList.add("border-red-500");
+
+          valid = false;
+        } else {
+          field.classList.remove("border-red-500");
+        }
+      });
+
+      if (!valid) {
+        alert("Please fill in all required fields.");
+
+        return;
+      }
+
+      alert("✅ Thank you! Your message has been sent.");
+
+      contactForm.reset();
+    });
+  }
 
   /* =====================================================
        Console
