@@ -273,6 +273,56 @@ if (galleryButtons.length > 0) {
 
 }
 
+/* ==========================================
+   Reservation Form Validation
+========================================== */
+
+const reservationForm = document.getElementById("reservationForm");
+
+if (reservationForm) {
+
+    reservationForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const requiredFields = reservationForm.querySelectorAll(
+            "input[required], select, textarea"
+        );
+
+        let valid = true;
+
+        requiredFields.forEach(field => {
+
+            if (field.value.trim() === "") {
+
+                field.classList.add("border-red-500");
+
+                valid = false;
+
+            } else {
+
+                field.classList.remove("border-red-500");
+
+            }
+
+        });
+
+        if (!valid) {
+
+            alert("Please complete all required fields.");
+
+            return;
+
+        }
+
+        alert("🎉 Thank you!\n\nYour reservation request has been submitted.");
+
+        reservationForm.reset();
+
+    });
+
+}
+
   /* =====================================================
        Console
     ====================================================== */
