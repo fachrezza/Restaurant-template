@@ -1,0 +1,333 @@
+/* ==========================================================
+   Garden Cafe
+   Author : ChatGPT
+   Version : 1.0
+========================================================== */
+
+/* =============================
+   Global
+============================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* =============================
+   Selection
+============================= */
+
+::selection{
+    background:#C49B66;
+    color:#fff;
+}
+
+/* =============================
+   Scrollbar
+============================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f3f3f3;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#C49B66;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#9f7849;
+}
+
+/* =============================
+   Navbar
+============================= */
+
+#navbar{
+
+    transition:.35s ease;
+
+}
+
+.navbar-scrolled{
+
+    background:#ffffff;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.navbar-scrolled a{
+
+    color:#222 !important;
+
+}
+
+.navbar-scrolled #menuButton{
+
+    color:#222;
+
+}
+
+/* =============================
+   Hero Image
+============================= */
+
+section:first-of-type img{
+
+    animation:zoomHero 12s linear infinite alternate;
+
+}
+
+@keyframes zoomHero{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+/* =============================
+   Button Hover
+============================= */
+
+button,
+a{
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    cursor:pointer;
+
+}
+
+/* =============================
+   Card
+============================= */
+
+.shadow-lg{
+
+    transition:.35s;
+
+}
+
+.shadow-lg:hover{
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+/* =============================
+   Gallery
+============================= */
+
+.gallery img{
+
+    transition:.35s;
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.06);
+
+}
+
+/* =============================
+   Fade Up
+============================= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =============================
+   Floating Button
+============================= */
+
+.fixed{
+
+    transition:.3s;
+
+}
+
+/* =============================
+   WhatsApp
+============================= */
+
+.fixed:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* =============================
+   Footer Link
+============================= */
+
+footer a{
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#C49B66;
+
+}
+
+/* =============================
+   Input
+============================= */
+
+input,
+textarea,
+select{
+
+    transition:.25s;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:#C49B66;
+
+    box-shadow:0 0 0 3px rgba(196,155,102,.2);
+
+}
+
+/* =============================
+   Card Image
+============================= */
+
+.rounded-3xl img{
+
+    transition:.4s;
+
+}
+
+.rounded-3xl:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* =============================
+   Overlay
+============================= */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+/* =============================
+   Utility
+============================= */
+
+.text-shadow{
+
+    text-shadow:0 4px 12px rgba(0,0,0,.4);
+
+}
+
+.section-title{
+
+    font-size:48px;
+
+    font-weight:700;
+
+}
+
+.section-subtitle{
+
+    color:#C49B66;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+}
+
+/* =============================
+   Image Radius
+============================= */
+
+img{
+
+    user-select:none;
+
+}
+
+/* =============================
+   Responsive
+============================= */
+
+@media(max-width:1024px){
+
+    .section-title{
+
+        font-size:38px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-title{
+
+        font-size:32px;
+
+    }
+
+}
+
+@media(max-width:640px){
+
+    .section-title{
+
+        font-size:28px;
+
+    }
+
+}
