@@ -1,459 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
+    <title>About Us | Garden Cafe</title>
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" />
 
-<title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-About Us | Garden Cafe
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B2F2F",
 
-</title>
+              secondary: "#C49B66",
 
-<link rel="icon" href="favicon.ico">
+              light: "#FFF8F0",
 
-<script src="https://cdn.tailwindcss.com"></script>
+              dark: "#1B1B1B",
+            },
+          },
+        },
+      };
+    </script>
 
-<script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-tailwind.config={
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-theme:{
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-extend:{
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-colors:{
+  <body class="font-[Poppins] bg-light">
+    <!-- NAVBAR -->
 
-primary:"#3B2F2F",
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a href="index.html" class="text-3xl font-bold text-white">
+            Garden Cafe
+          </a>
 
-secondary:"#C49B66",
+          <nav class="hidden lg:flex gap-10 text-white">
+            <a href="index.html">Home</a>
 
-light:"#FFF8F0",
+            <a href="about.html" class="text-secondary"> About </a>
 
-dark:"#1B1B1B"
+            <a href="menu.html"> Menu </a>
 
-}
+            <a href="gallery.html"> Gallery </a>
 
-}
+            <a href="reservation.html"> Reservation </a>
 
-}
+            <a href="contact.html"> Contact </a>
+          </nav>
 
-}
+          <a
+            href="reservation.html"
+            class="hidden lg:block bg-secondary px-6 py-3 rounded-full text-white"
+          >
+            Book Table
+          </a>
+        </div>
+      </div>
+    </header>
 
-</script>
+    <!-- HERO -->
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+    <section class="relative h-[60vh]">
+      <img
+        src="assets/images/about.jpg"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+      <div class="absolute inset-0 bg-black/60"></div>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+      <div class="relative h-full flex items-center">
+        <div class="max-w-7xl mx-auto px-6">
+          <h1 class="text-6xl font-bold text-white">About Garden Cafe</h1>
 
-<link rel="stylesheet"
-href="assets/css/style.css">
+          <p class="text-gray-300 mt-6 max-w-2xl">
+            Fresh coffee, delicious food, and unforgettable dining experiences.
+          </p>
+        </div>
+      </div>
+    </section>
 
-</head>
+    <!-- OUR STORY -->
 
-<body class="font-[Poppins] bg-light">
-
-<!-- NAVBAR -->
-
-<header
-id="navbar"
-class="fixed top-0 left-0 w-full z-50">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="flex justify-between items-center h-20">
-
-<a
-href="index.html"
-class="text-3xl font-bold text-white">
-
-Garden Cafe
-
-</a>
-
-<nav class="hidden lg:flex gap-10 text-white">
-
-<a href="index.html">Home</a>
-
-<a href="about.html"
-class="text-secondary">
-
-About
-
-</a>
-
-<a href="menu.html">
-
-Menu
-
-</a>
-
-<a href="gallery.html">
-
-Gallery
-
-</a>
-
-<a href="reservation.html">
-
-Reservation
-
-</a>
-
-<a href="contact.html">
-
-Contact
-
-</a>
-
-</nav>
-
-<a
-href="reservation.html"
-class="hidden lg:block bg-secondary px-6 py-3 rounded-full text-white">
-
-Book Table
-
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- HERO -->
-
-<section class="relative h-[60vh]">
-
-<img
-
-src="assets/images/about.jpg"
-
-class="absolute inset-0 w-full h-full object-cover">
-
-<div class="absolute inset-0 bg-black/60">
-
-</div>
-
-<div class="relative h-full flex items-center">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<h1 class="text-6xl font-bold text-white">
-
-About Garden Cafe
-
-</h1>
-
-<p class="text-gray-300 mt-6 max-w-2xl">
-
-Fresh coffee,
-
-delicious food,
-
-and unforgettable dining experiences.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- OUR STORY -->
-
-<section class="py-24 bg-white">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid lg:grid-cols-2 gap-16 items-center">
-
-<div>
-
-<img
-
-src="assets/images/about.jpg"
-
-class="rounded-3xl shadow-xl">
-
-</div>
-
-<div>
-
-<span class="text-secondary uppercase">
-
-Our Story
-
-</span>
-
-<h2 class="text-5xl font-bold mt-5">
-
-More Than
-
-Just A Cafe
-
-</h2>
-
-<p class="text-gray-600 mt-8 leading-8">
-
-Founded in 2015,
-
-Garden Cafe started from a dream
-to create a warm place where
-people can enjoy premium coffee
-and handcrafted meals.
-
-Every recipe is carefully prepared
-using fresh ingredients,
-served with passion,
-and enjoyed in a cozy atmosphere.
-
-</p>
-
-<div class="grid grid-cols-2 gap-8 mt-12">
-
-<div>
-
-<h3
-class="text-5xl font-bold text-secondary">
-
-10+
-
-</h3>
-
-<p>
-
-Years Experience
-
-</p>
-
-</div>
-
-<div>
-
-<h3
-class="text-5xl font-bold text-secondary">
-
-150+
-
-</h3>
-
-<p>
-
-Menu Items
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Vision Mission -->
-
-<section class="py-24 bg-light">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid lg:grid-cols-2 gap-10">
-
-<div
-class="bg-white rounded-3xl shadow-lg p-10">
-
-<h2
-class="text-4xl font-bold">
-
-Our Vision
-
-</h2>
-
-<p
-class="mt-6 text-gray-600 leading-8">
-
-To become one of the most
-comfortable cafes,
-serving exceptional coffee
-and memorable dining experiences
-for everyone.
-
-</p>
-
-</div>
-
-<div
-class="bg-white rounded-3xl shadow-lg p-10">
-
-<h2
-class="text-4xl font-bold">
-
-Our Mission
-
-</h2>
-
-<ul
-class="mt-6 space-y-5 text-gray-600">
-
-<li>
-
-✔ Fresh ingredients
-
-</li>
-
-<li>
-
-✔ Premium coffee beans
-
-</li>
-
-<li>
-
-✔ Excellent customer service
-
-</li>
-
-<li>
-
-✔ Comfortable atmosphere
-
-</li>
-
-<li>
-
-✔ Continuous innovation
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <img src="assets/images/about.jpg" class="rounded-3xl shadow-xl" />
+          </div>
+
+          <div>
+            <span class="text-secondary uppercase"> Our Story </span>
+
+            <h2 class="text-5xl font-bold mt-5">More Than Just A Cafe</h2>
+
+            <p class="text-gray-600 mt-8 leading-8">
+              Founded in 2015, Garden Cafe started from a dream to create a warm
+              place where people can enjoy premium coffee and handcrafted meals.
+              Every recipe is carefully prepared using fresh ingredients, served
+              with passion, and enjoyed in a cozy atmosphere.
+            </p>
+
+            <div class="grid grid-cols-2 gap-8 mt-12">
+              <div>
+                <h3 class="text-5xl font-bold text-secondary">10+</h3>
+
+                <p>Years Experience</p>
+              </div>
+
+              <div>
+                <h3 class="text-5xl font-bold text-secondary">150+</h3>
+
+                <p>Menu Items</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Mission -->
+
+    <section class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div class="bg-white rounded-3xl shadow-lg p-10">
+            <h2 class="text-4xl font-bold">Our Vision</h2>
+
+            <p class="mt-6 text-gray-600 leading-8">
+              To become one of the most comfortable cafes, serving exceptional
+              coffee and memorable dining experiences for everyone.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-10">
+            <h2 class="text-4xl font-bold">Our Mission</h2>
+
+            <ul class="mt-6 space-y-5 text-gray-600">
+              <li>✔ Fresh ingredients</li>
+
+              <li>✔ Premium coffee beans</li>
+
+              <li>✔ Excellent customer service</li>
+
+              <li>✔ Comfortable atmosphere</li>
+
+              <li>✔ Continuous innovation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===================================== -->
     <!-- Meet Our Chef -->
     <!-- ===================================== -->
 
     <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary">
+            Executive Chef
+          </span>
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center">
-
-                <span class="uppercase tracking-[5px] text-secondary">
-                    Executive Chef
-                </span>
-
-                <h2 class="text-5xl font-bold mt-5">
-
-                    Meet Our Chef
-
-                </h2>
-
-            </div>
-
-            <div
-                class="grid lg:grid-cols-2 gap-16 items-center mt-20">
-
-                <div>
-
-                    <img
-                        src="assets/images/chef.jpg"
-                        class="rounded-3xl shadow-xl w-full">
-
-                </div>
-
-                <div>
-
-                    <h3 class="text-4xl font-bold">
-
-                        Chef Michael Anderson
-
-                    </h3>
-
-                    <span
-                        class="text-secondary font-semibold">
-
-                        Executive Chef
-
-                    </span>
-
-                    <p
-                        class="text-gray-600 mt-8 leading-8">
-
-                        With over 15 years of culinary experience,
-                        Chef Michael combines traditional flavors
-                        with modern cooking techniques.
-
-                        His philosophy is simple:
-                        every plate should tell a story and
-                        create unforgettable memories.
-
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-8 mt-10">
-
-                        <div>
-
-                            <h2
-                                class="text-5xl font-bold text-secondary">
-
-                                15+
-
-                            </h2>
-
-                            <p>
-                                Years Experience
-                            </p>
-
-                        </div>
-
-                        <div>
-
-                            <h2
-                                class="text-5xl font-bold text-secondary">
-
-                                50+
-
-                            </h2>
-
-                            <p>
-                                Signature Dishes
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <h2 class="text-5xl font-bold mt-5">Meet Our Chef</h2>
         </div>
 
+        <div class="grid lg:grid-cols-2 gap-16 items-center mt-20">
+          <div>
+            <img
+              src="assets/images/chef.jpg"
+              class="rounded-3xl shadow-xl w-full"
+            />
+          </div>
+
+          <div>
+            <h3 class="text-4xl font-bold">Chef Michael Anderson</h3>
+
+            <span class="text-secondary font-semibold"> Executive Chef </span>
+
+            <p class="text-gray-600 mt-8 leading-8">
+              With over 15 years of culinary experience, Chef Michael combines
+              traditional flavors with modern cooking techniques. His philosophy
+              is simple: every plate should tell a story and create
+              unforgettable memories.
+            </p>
+
+            <div class="grid grid-cols-2 gap-8 mt-10">
+              <div>
+                <h2 class="text-5xl font-bold text-secondary">15+</h2>
+
+                <p>Years Experience</p>
+              </div>
+
+              <div>
+                <h2 class="text-5xl font-bold text-secondary">50+</h2>
+
+                <p>Signature Dishes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===================================== -->
@@ -461,140 +225,77 @@ class="mt-6 space-y-5 text-gray-600">
     <!-- ===================================== -->
 
     <section class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary"> Team </span>
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center">
-
-                <span class="uppercase tracking-[5px] text-secondary">
-                    Team
-                </span>
-
-                <h2 class="text-5xl font-bold mt-5">
-
-                    Meet Our Team
-
-                </h2>
-
-            </div>
-
-            <div
-                class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-
-                <!-- Team -->
-
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-
-                    <img
-                        src="assets/images/team/team1.jpg"
-                        class="w-full h-80 object-cover">
-
-                    <div class="p-6">
-
-                        <h3
-                            class="text-2xl font-semibold">
-
-                            Daniel
-
-                        </h3>
-
-                        <p
-                            class="text-secondary mt-2">
-
-                            Head Chef
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-
-                    <img
-                        src="assets/images/team/team2.jpg"
-                        class="w-full h-80 object-cover">
-
-                    <div class="p-6">
-
-                        <h3
-                            class="text-2xl font-semibold">
-
-                            Olivia
-
-                        </h3>
-
-                        <p
-                            class="text-secondary mt-2">
-
-                            Barista
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-
-                    <img
-                        src="assets/images/team/team3.jpg"
-                        class="w-full h-80 object-cover">
-
-                    <div class="p-6">
-
-                        <h3
-                            class="text-2xl font-semibold">
-
-                            Sophia
-
-                        </h3>
-
-                        <p
-                            class="text-secondary mt-2">
-
-                            Pastry Chef
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-lg text-center">
-
-                    <img
-                        src="assets/images/team/team4.jpg"
-                        class="w-full h-80 object-cover">
-
-                    <div class="p-6">
-
-                        <h3
-                            class="text-2xl font-semibold">
-
-                            Kevin
-
-                        </h3>
-
-                        <p
-                            class="text-secondary mt-2">
-
-                            Restaurant Manager
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          <h2 class="text-5xl font-bold mt-5">Meet Our Team</h2>
         </div>
 
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          <!-- Team -->
+
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-lg text-center"
+          >
+            <img
+              src="assets/images/team/team1.jpg"
+              class="w-full h-80 object-cover"
+            />
+
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold">Daniel</h3>
+
+              <p class="text-secondary mt-2">Head Chef</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-lg text-center"
+          >
+            <img
+              src="assets/images/team/team2.jpg"
+              class="w-full h-80 object-cover"
+            />
+
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold">Olivia</h3>
+
+              <p class="text-secondary mt-2">Barista</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-lg text-center"
+          >
+            <img
+              src="assets/images/team/team3.jpg"
+              class="w-full h-80 object-cover"
+            />
+
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold">Sophia</h3>
+
+              <p class="text-secondary mt-2">Pastry Chef</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-lg text-center"
+          >
+            <img
+              src="assets/images/team/team4.jpg"
+              class="w-full h-80 object-cover"
+            />
+
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold">Kevin</h3>
+
+              <p class="text-secondary mt-2">Restaurant Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===================================== -->
@@ -602,88 +303,41 @@ class="mt-6 space-y-5 text-gray-600">
     <!-- ===================================== -->
 
     <section class="py-24 bg-primary">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <div>
+            <h2 class="text-5xl font-bold text-secondary" data-counter="15">
+              0
+            </h2>
 
-        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-white mt-4">Years Experience</p>
+          </div>
 
-            <div
-                class="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <div>
+            <h2 class="text-5xl font-bold text-secondary" data-counter="25000">
+              0
+            </h2>
 
-                <div>
+            <p class="text-white mt-4">Happy Customers</p>
+          </div>
 
-                    <h2
-                        class="text-5xl font-bold text-secondary"
-                        data-counter="15">
+          <div>
+            <h2 class="text-5xl font-bold text-secondary" data-counter="150">
+              0
+            </h2>
 
-                        0
+            <p class="text-white mt-4">Menu Variants</p>
+          </div>
 
-                    </h2>
+          <div>
+            <h2 class="text-5xl font-bold text-secondary" data-counter="20">
+              0
+            </h2>
 
-                    <p class="text-white mt-4">
-
-                        Years Experience
-
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <h2
-                        class="text-5xl font-bold text-secondary"
-                        data-counter="25000">
-
-                        0
-
-                    </h2>
-
-                    <p class="text-white mt-4">
-
-                        Happy Customers
-
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <h2
-                        class="text-5xl font-bold text-secondary"
-                        data-counter="150">
-
-                        0
-
-                    </h2>
-
-                    <p class="text-white mt-4">
-
-                        Menu Variants
-
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <h2
-                        class="text-5xl font-bold text-secondary"
-                        data-counter="20">
-
-                        0
-
-                    </h2>
-
-                    <p class="text-white mt-4">
-
-                        Professional Staff
-
-                    </p>
-
-                </div>
-
-            </div>
-
+            <p class="text-white mt-4">Professional Staff</p>
+          </div>
         </div>
-
+      </div>
     </section>
 
     <!-- ===================================== -->
@@ -691,111 +345,324 @@ class="mt-6 space-y-5 text-gray-600">
     <!-- ===================================== -->
 
     <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary"> Why Us </span>
 
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center">
-
-                <span class="uppercase tracking-[5px] text-secondary">
-
-                    Why Us
-
-                </span>
-
-                <h2 class="text-5xl font-bold mt-5">
-
-                    Our Commitment
-
-                </h2>
-
-            </div>
-
-            <div
-                class="grid lg:grid-cols-3 gap-10 mt-20">
-
-                <div
-                    class="rounded-3xl shadow-lg p-10">
-
-                    <div class="text-6xl">
-
-                        ☕
-
-                    </div>
-
-                    <h3
-                        class="text-2xl font-semibold mt-6">
-
-                        Premium Coffee
-
-                    </h3>
-
-                    <p
-                        class="mt-4 text-gray-600 leading-8">
-
-                        Carefully selected beans
-                        from local and international farms.
-
-                    </p>
-
-                </div>
-
-                <div
-                    class="rounded-3xl shadow-lg p-10">
-
-                    <div class="text-6xl">
-
-                        🥩
-
-                    </div>
-
-                    <h3
-                        class="text-2xl font-semibold mt-6">
-
-                        Premium Ingredients
-
-                    </h3>
-
-                    <p
-                        class="mt-4 text-gray-600 leading-8">
-
-                        Fresh ingredients
-                        prepared every day.
-
-                    </p>
-
-                </div>
-
-                <div
-                    class="rounded-3xl shadow-lg p-10">
-
-                    <div class="text-6xl">
-
-                        ⭐
-
-                    </div>
-
-                    <h3
-                        class="text-2xl font-semibold mt-6">
-
-                        Best Service
-
-                    </h3>
-
-                    <p
-                        class="mt-4 text-gray-600 leading-8">
-
-                        Friendly staff,
-                        quick service,
-                        and memorable experiences.
-
-                    </p>
-
-                </div>
-
-            </div>
-
+          <h2 class="text-5xl font-bold mt-5">Our Commitment</h2>
         </div>
 
+        <div class="grid lg:grid-cols-3 gap-10 mt-20">
+          <div class="rounded-3xl shadow-lg p-10">
+            <div class="text-6xl">☕</div>
+
+            <h3 class="text-2xl font-semibold mt-6">Premium Coffee</h3>
+
+            <p class="mt-4 text-gray-600 leading-8">
+              Carefully selected beans from local and international farms.
+            </p>
+          </div>
+
+          <div class="rounded-3xl shadow-lg p-10">
+            <div class="text-6xl">🥩</div>
+
+            <h3 class="text-2xl font-semibold mt-6">Premium Ingredients</h3>
+
+            <p class="mt-4 text-gray-600 leading-8">
+              Fresh ingredients prepared every day.
+            </p>
+          </div>
+
+          <div class="rounded-3xl shadow-lg p-10">
+            <div class="text-6xl">⭐</div>
+
+            <h3 class="text-2xl font-semibold mt-6">Best Service</h3>
+
+            <p class="mt-4 text-gray-600 leading-8">
+              Friendly staff, quick service, and memorable experiences.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    
+    <!-- ===================================== -->
+    <!-- Company Timeline -->
+    <!-- ===================================== -->
+
+    <section class="py-24 bg-light">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary"> Journey </span>
+
+          <h2 class="text-5xl font-bold mt-5">Our Journey</h2>
+        </div>
+
+        <div class="mt-20 space-y-10">
+          <div class="bg-white rounded-3xl shadow-lg p-8">
+            <span class="text-secondary font-bold text-xl"> 2015 </span>
+
+            <h3 class="text-2xl font-semibold mt-2">Garden Cafe Founded</h3>
+
+            <p class="text-gray-600 mt-4 leading-8">
+              We started with a small coffee shop serving freshly brewed coffee
+              and homemade pastries.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8">
+            <span class="text-secondary font-bold text-xl"> 2018 </span>
+
+            <h3 class="text-2xl font-semibold mt-2">
+              Expanded Restaurant Menu
+            </h3>
+
+            <p class="text-gray-600 mt-4 leading-8">
+              Added premium Western and Asian dishes prepared by experienced
+              chefs.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8">
+            <span class="text-secondary font-bold text-xl"> 2021 </span>
+
+            <h3 class="text-2xl font-semibold mt-2">Best Cafe Award</h3>
+
+            <p class="text-gray-600 mt-4 leading-8">
+              Recognized as one of the most recommended cafés in the city.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-8">
+            <span class="text-secondary font-bold text-xl"> Today </span>
+
+            <h3 class="text-2xl font-semibold mt-2">Growing Together</h3>
+
+            <p class="text-gray-600 mt-4 leading-8">
+              We continue innovating to provide unforgettable dining experiences
+              for every guest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- Awards -->
+    <!-- ===================================== -->
+
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary"> Awards </span>
+
+          <h2 class="text-5xl font-bold mt-5">Recognition</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          <div class="rounded-3xl shadow-lg p-8 text-center">
+            <div class="text-6xl">🏆</div>
+
+            <h3 class="font-semibold text-xl mt-6">Best Cafe</h3>
+
+            <p class="text-gray-500 mt-3">2021</p>
+          </div>
+
+          <div class="rounded-3xl shadow-lg p-8 text-center">
+            <div class="text-6xl">☕</div>
+
+            <h3 class="font-semibold text-xl mt-6">Premium Coffee</h3>
+
+            <p class="text-gray-500 mt-3">Certified Beans</p>
+          </div>
+
+          <div class="rounded-3xl shadow-lg p-8 text-center">
+            <div class="text-6xl">⭐</div>
+
+            <h3 class="font-semibold text-xl mt-6">4.9 Rating</h3>
+
+            <p class="text-gray-500 mt-3">Customer Reviews</p>
+          </div>
+
+          <div class="rounded-3xl shadow-lg p-8 text-center">
+            <div class="text-6xl">👨‍🍳</div>
+
+            <h3 class="font-semibold text-xl mt-6">Professional Team</h3>
+
+            <p class="text-gray-500 mt-3">Certified Chef</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- Gallery -->
+    <!-- ===================================== -->
+
+    <section class="py-24 bg-light">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <span class="uppercase tracking-[5px] text-secondary"> Gallery </span>
+
+          <h2 class="text-5xl font-bold mt-5">Our Moments</h2>
+        </div>
+
+        <div class="gallery grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+          <img
+            src="assets/images/gallery/1.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/2.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/3.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/4.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/5.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/6.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/7.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+
+          <img
+            src="assets/images/gallery/8.jpg"
+            class="rounded-3xl h-72 object-cover w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- CTA -->
+    <!-- ===================================== -->
+
+    <section class="py-24 bg-primary">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <span class="uppercase tracking-[5px] text-secondary">
+          Reservation
+        </span>
+
+        <h2 class="text-5xl font-bold text-white mt-5">
+          Experience Our Best Service
+        </h2>
+
+        <p class="text-gray-300 mt-8 leading-8">
+          Reserve your table today and enjoy premium coffee, delicious food, and
+          a cozy atmosphere with your family and friends.
+        </p>
+
+        <a
+          href="reservation.html"
+          class="inline-block mt-10 bg-secondary px-10 py-4 rounded-full text-white font-semibold hover:scale-105 duration-300"
+        >
+          Book a Table
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- Footer -->
+    <!-- ===================================== -->
+
+    <footer class="bg-dark text-gray-300">
+      <div class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <h2 class="text-3xl font-bold text-white">Garden Cafe</h2>
+
+            <p class="mt-6 leading-8">
+              Fresh Coffee, Delicious Food, Cozy Atmosphere.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl text-white font-semibold mb-6">Quick Links</h3>
+
+            <ul class="space-y-3">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="reservation.html">Reservation</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl text-white font-semibold mb-6">Opening Hours</h3>
+
+            <ul class="space-y-3">
+              <li>Monday - Friday</li>
+              <li>08.00 - 22.00</li>
+              <li>Saturday</li>
+              <li>08.00 - 23.00</li>
+              <li>Sunday</li>
+              <li>09.00 - 22.00</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl text-white font-semibold mb-6">Contact</h3>
+
+            <ul class="space-y-3">
+              <li>📍 Jakarta</li>
+              <li>📞 +62 812 3456 7890</li>
+              <li>✉ hello@gardencafe.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="border-gray-700 my-10" />
+
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p>© 2026 Garden Cafe. All Rights Reserved.</p>
+
+          <div class="flex gap-6 mt-5 md:mt-0">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+
+    <a
+      href="#"
+      class="fixed bottom-24 right-6 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 duration-300"
+    >
+      💬
+    </a>
+
+    <!-- Back To Top -->
+
+    <button
+      id="topButton"
+      class="fixed bottom-6 right-6 bg-secondary text-white w-14 h-14 rounded-full shadow-lg hidden"
+    >
+      ↑
+    </button>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
